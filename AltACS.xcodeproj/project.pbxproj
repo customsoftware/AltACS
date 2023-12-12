@@ -27,6 +27,12 @@
 		90747B952B27B82600C4140D /* TaskFactory+GoAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */; };
 		90747B972B27C18900C4140D /* TaskFactory+Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B962B27C18900C4140D /* TaskFactory+Airport.swift */; };
 		90747B992B27C2E800C4140D /* TaskFactory+Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */; };
+		90747B9B2B27E86900C4140D /* TaskFactory+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B9A2B27E86900C4140D /* TaskFactory+Navigation.swift */; };
+		90747B9D2B27E89600C4140D /* TaskFactory+SlowFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B9C2B27E89600C4140D /* TaskFactory+SlowFlight.swift */; };
+		90747B9F2B27E8AA00C4140D /* TaskFactory+Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B9E2B27E8AA00C4140D /* TaskFactory+Instruments.swift */; };
+		90747BA12B27E8C000C4140D /* TaskFactory+Emergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA02B27E8C000C4140D /* TaskFactory+Emergency.swift */; };
+		90747BA32B27E8D200C4140D /* TaskFactory+Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA22B27E8D200C4140D /* TaskFactory+Night.swift */; };
+		90747BA52B27E8E400C4140D /* TaskFactory+PostFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA42B27E8E400C4140D /* TaskFactory+PostFlight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +76,12 @@
 		90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+GoAround.swift"; sourceTree = "<group>"; };
 		90747B962B27C18900C4140D /* TaskFactory+Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Airport.swift"; sourceTree = "<group>"; };
 		90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Performance.swift"; sourceTree = "<group>"; };
+		90747B9A2B27E86900C4140D /* TaskFactory+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Navigation.swift"; sourceTree = "<group>"; };
+		90747B9C2B27E89600C4140D /* TaskFactory+SlowFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+SlowFlight.swift"; sourceTree = "<group>"; };
+		90747B9E2B27E8AA00C4140D /* TaskFactory+Instruments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Instruments.swift"; sourceTree = "<group>"; };
+		90747BA02B27E8C000C4140D /* TaskFactory+Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Emergency.swift"; sourceTree = "<group>"; };
+		90747BA22B27E8D200C4140D /* TaskFactory+Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Night.swift"; sourceTree = "<group>"; };
+		90747BA42B27E8E400C4140D /* TaskFactory+PostFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+PostFlight.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +198,12 @@
 				90747B962B27C18900C4140D /* TaskFactory+Airport.swift */,
 				90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */,
 				90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */,
+				90747B9A2B27E86900C4140D /* TaskFactory+Navigation.swift */,
+				90747B9C2B27E89600C4140D /* TaskFactory+SlowFlight.swift */,
+				90747B9E2B27E8AA00C4140D /* TaskFactory+Instruments.swift */,
+				90747BA02B27E8C000C4140D /* TaskFactory+Emergency.swift */,
+				90747BA22B27E8D200C4140D /* TaskFactory+Night.swift */,
+				90747BA42B27E8E400C4140D /* TaskFactory+PostFlight.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,16 +341,22 @@
 				90747B952B27B82600C4140D /* TaskFactory+GoAround.swift in Sources */,
 				90747B992B27C2E800C4140D /* TaskFactory+Performance.swift in Sources */,
 				90747B802B27615800C4140D /* Task.swift in Sources */,
+				90747B9D2B27E89600C4140D /* TaskFactory+SlowFlight.swift in Sources */,
 				90747B882B27620C00C4140D /* TestItemSwiftUIView.swift in Sources */,
 				90747B912B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift in Sources */,
 				90747B892B27620C00C4140D /* ContentView.swift in Sources */,
+				90747BA12B27E8C000C4140D /* TaskFactory+Emergency.swift in Sources */,
 				90747B7F2B27615800C4140D /* TestComponent.swift in Sources */,
 				90747B8C2B27620C00C4140D /* TaskItemListSwiftUIView.swift in Sources */,
+				90747BA32B27E8D200C4140D /* TaskFactory+Night.swift in Sources */,
 				90747B972B27C18900C4140D /* TaskFactory+Airport.swift in Sources */,
+				90747B9F2B27E8AA00C4140D /* TaskFactory+Instruments.swift in Sources */,
 				90747B8B2B27620C00C4140D /* TaskItemSwiftUIView.swift in Sources */,
 				90747B8A2B27620C00C4140D /* SectionsSwiftUIView.swift in Sources */,
+				90747BA52B27E8E400C4140D /* TaskFactory+PostFlight.swift in Sources */,
 				90747B8F2B279BD900C4140D /* TaskFactory.swift in Sources */,
 				90747B522B27611600C4140D /* AltACSApp.swift in Sources */,
+				90747B9B2B27E86900C4140D /* TaskFactory+Navigation.swift in Sources */,
 				90747B812B27615800C4140D /* TestSection.swift in Sources */,
 				90747B932B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift in Sources */,
 			);

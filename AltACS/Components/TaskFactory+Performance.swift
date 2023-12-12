@@ -13,180 +13,67 @@ import SwiftData
 extension TaskFactory {
     static func generatePerformance(for aSection: TestSection, in context: ModelContext) -> [Task] {
         var retValue = [Task]()
-        let p1 = Task(sequence: 4, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
+        // -- Steep Turns
+        retValue.append(loadSteepTurns(using: context, and: aSection))
         
-        p1.owningSection = aSection
-        context.insert(p1)
+        // -- Ground Reference Maneuvers
+        retValue.append(loadGRM(using: context, and: aSection))
         
-        retValue.append(p1)
         return retValue
     }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generateNavigation(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 5, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
+    
+    private static func loadSteepTurns(using context: ModelContext, and aSection: TestSection) -> Task {
         
-        p1.owningSection = aSection
-        context.insert(p1)
+        let task1 = TaskFactory.createTask(using: 0, name: "Steep Turns", reference: "FAA-H-8083-2, FAA-H-8083-3; POH/AFM", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with steep turns.", in: context, and: aSection)
         
-        retValue.append(p1)
-        return retValue
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K1", "Purpose of steep turns.", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2", "Aerodynamics associated with steep turns, to include:", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2a", "a. Coordinated and uncoordinated flight", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2b", "b. Overbanking tendencies", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2c", "c. Maneuvering speed, including the impact of weight changes", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2d", "d. Load factor and accelerated stalls", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.A.K2e", "e. Rate and radius of turn", in: task1, using: context)
+        
+        TaskFactory.createComponent(type: .risk, id: "PA.V.A.R1", "Failure to divide attention between airplane control and orientation.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.A.R2", "Collision hazards, to include aircraft and terrain.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.A.R3", "Low altitude maneuvering including stall, spin, or CFIT.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.A.R4", "Distractions, improper task management, loss of situational awareness, or disorientation.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.A.R5", "Failure to maintain coordinated flight.", in: task1, using: context)
+        
+        TaskFactory.createComponent(type: .skill, id: "PA.V.A.S1", "Clear the area.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.A.S2", "Establish the manufacturer’s recommended airspeed; or if one is not available, an airspeed not to exceed Va.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.A.S3", "Roll into a coordinated 360° steep turn with approximately a 45° bank.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.A.S4", "Perform the Task in the opposite direction, as specified by evaluator.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.A.S5", "Maintain the entry altitude ±100 feet, airspeed ±10 knots, bank ±5°, and roll out on the entry heading ±10°.", in: task1, using: context)
+        
+        return task1
+    }
+    
+    private static func loadGRM(using context: ModelContext, and aSection: TestSection) -> Task {
+        let task1 = TaskFactory.createTask(using: 1, name: "Ground Reference Maneuvers", reference: "14 CFR part 61; FAA-H-8083-2, FAA-H-8083-3", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with ground reference maneuvering which may include a rectangular course, S-turns, and turns around a point.", in: context, and: aSection)
+        
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.B.K1", "Purpose of ground reference maneuvers.", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.B.K2", "Effects of wind on ground track and relation to a ground reference point.", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.B.K3", "Effects of bank angle and groundspeed on rate and radius of turn.", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.V.B.K4", "Relationship of rectangular course to airport traffic pattern.", in: task1, using: context)
+        
+        TaskFactory.createComponent(type: .risk, id: "PA.V.B.R1", "Failure to divide attention between airplane control and orientation.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.B.R2", "Collision hazards, to include aircraft, terrain, obstacles, and wires.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.B.R3", "Low altitude maneuvering including stall, spin, or CFIT.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.B.R4", "Distractions, improper task management, loss of situational awareness, or disorientation.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.V.B.R5", "Failure to maintain coordinated flight.", in: task1, using: context)
+        
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S1", "Clear the area.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S2", "Select a suitable ground reference area, line, or point as appropriate.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S3", "Plan the maneuver: (Must do at least one of the following", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S3a", "a. Rectangular course: enter a left or right pattern, 600 to 1,000 feet above ground level (AGL) at an appropriate distance from the selected reference area, 45° to the downwind leg", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S3b", "b. S-turns: enter perpendicular to the selected reference line, 600 to 1,000 feet AGL at an appropriate distance from the selected reference area", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S3c", "c. Turns around a point: enter at an appropriate distance from the reference point, 600 to 1,000 feet AGL at an appropriate distance from the selected reference area", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S4", "Apply adequate wind-drift correction during straight and turning flight to maintain a constant ground track around a rectangular reference area, or to maintain a constant radius turn on each side of a selected reference line or point.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S5", "If performing S-Turns, reverse the turn directly over the selected reference line; if performing turns around a point, complete turns in either direction, as specified by the evaluator", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S6", "Divide attention between airplane control, traffic avoidance and the ground track while maintaining coordinated flight.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.V.B.S7", "Maintain altitude ±100 feet; maintain airspeed ±10 knots.", in: task1, using: context)
+        
+        return task1
     }
 }
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generateSlowFlight(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 5, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
-        
-        p1.owningSection = aSection
-        context.insert(p1)
-        
-        retValue.append(p1)
-        return retValue
-    }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generateInstrument(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 6, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
-        
-        p1.owningSection = aSection
-        context.insert(p1)
-        
-        retValue.append(p1)
-        return retValue
-    }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generateEmergency(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 7, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
-        
-        p1.owningSection = aSection
-        context.insert(p1)
-        
-        retValue.append(p1)
-        return retValue
-    }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generateNight(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 8, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
-        
-        p1.owningSection = aSection
-        context.insert(p1)
-        
-        retValue.append(p1)
-        return retValue
-    }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
-
-// MARK: - This handles all the go around takeoff and landing
-extension TaskFactory {
-    static func generatePostFlight(for aSection: TestSection, in context: ModelContext) -> [Task] {
-        var retValue = [Task]()
-        let p1 = Task(sequence: 9, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
-        
-        p1.owningSection = aSection
-        context.insert(p1)
-        
-        retValue.append(p1)
-        return retValue
-    }
-}
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */
