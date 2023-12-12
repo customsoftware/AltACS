@@ -25,11 +25,11 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("ACS Test")
-//            .toolbar {
-//                if sections.count == 0 {
-//                    Button("Add Sections", action: addSection)
-//                }
-//            }
+            .onAppear(perform: {
+                if sections.count == 0 {
+                    addSection()
+                }
+            })
         }
     }
     

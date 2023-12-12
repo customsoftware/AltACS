@@ -50,7 +50,7 @@ class TaskFactory {
     }
     
     static func createComponent(type: ComponentType, id: String, _ text: String, in aTask: Task, using context: ModelContext){
-        let newComponent = TestComponent(state: .notTested, type: type, identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
+        let newComponent = TestComponent( type: type, identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
         newComponent.owningTask = aTask
         
         switch type {

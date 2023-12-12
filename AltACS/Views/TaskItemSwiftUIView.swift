@@ -152,7 +152,7 @@ struct TaskItemSwiftUIView: View {
     }
     
     private func addNewKnowledge() {
-        let newKnowledgeItem = TestComponent(state: .notTested, type: .knowledge, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
+        let newKnowledgeItem = TestComponent(type: .knowledge, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
         owningTask.knowledge.append(newKnowledgeItem)
         newKnowledgeItem.owningTask = owningTask
         
@@ -161,7 +161,7 @@ struct TaskItemSwiftUIView: View {
     }
     
     private func addNewRisk() {
-        let newRiskItem = TestComponent(state: .notTested, type: .risk, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
+        let newRiskItem = TestComponent(type: .risk, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
         owningTask.risk.append(newRiskItem)
         newRiskItem.owningTask = owningTask
         
@@ -170,7 +170,7 @@ struct TaskItemSwiftUIView: View {
     }
     
     private func addNewSkill() {
-        let newSkillItem = TestComponent(state: .notTested, type: .skill, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
+        let newSkillItem = TestComponent(type: .skill, identifier: idString, componentDescription: itemDescription, answer: "", reference: "")
         owningTask.skills.append(newSkillItem)
         newSkillItem.owningTask = owningTask
         

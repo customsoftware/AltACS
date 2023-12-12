@@ -39,7 +39,7 @@ struct TestItemSwiftUIView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Task.self, configurations: config)
         
-        let example = TestComponent(state: .notTested, type: .knowledge, identifier: "Something", componentDescription: "Yeah this", answer: "", reference: "")
+        let example = TestComponent(type: .knowledge, identifier: "Something", componentDescription: "Yeah this", answer: "", reference: "")
         return  TestItemSwiftUIView(aSkill: example)
             .modelContainer(container)
     } catch {

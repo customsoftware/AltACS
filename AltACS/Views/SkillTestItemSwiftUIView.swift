@@ -10,6 +10,7 @@ import SwiftData
 
 struct SkillTestItemSwiftUIView: View {
     @Bindable var aSkill: TestComponent
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,17 +23,23 @@ struct SkillTestItemSwiftUIView: View {
                 .padding(.leading)
                 .padding(.trailing)
             Divider()
-            Text("Skill Status:")
-                .bold()
-            
             Toggle(isOn: $aSkill.isComplete, label: {
                 Text("Skill Completed")
             })
+            .bold()
             .padding(.trailing)
-    
             Spacer()
         }
         .padding(.leading)
+        .onDisappear(perform: {
+            if aSkill.hasChanges {
+                do {
+                    try modelContext.save()
+                } catch let error {
+                    print("There was an error saving the data: \(error.localizedDescription)")
+                }
+            }
+        })
     }
 }
 
@@ -41,7 +48,7 @@ struct SkillTestItemSwiftUIView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Task.self, configurations: config)
         
-        let example = TestComponent(state: .notTested, type: .knowledge, identifier: "Something", componentDescription: "Yeah this", answer: "", reference: "")
+        let example = TestComponent(type: .knowledge, identifier: "Something", componentDescription: "Yeah this", answer: "", reference: "")
         return  SkillTestItemSwiftUIView(aSkill: example)
             .modelContainer(container)
     } catch {

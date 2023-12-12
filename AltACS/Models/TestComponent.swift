@@ -11,7 +11,6 @@ import SwiftData
 
 @Model
 class TestComponent {
-    var state: ComponentState = ComponentState.notTested
     var type: ComponentType = ComponentType.notSet
     var isComplete: Bool = false
     var id: String = ""
@@ -21,8 +20,7 @@ class TestComponent {
     
     @Relationship var owningTask: Task?
     
-    init(state: ComponentState, type: ComponentType, identifier: String, componentDescription: String, answer: String, reference: String) {
-        self.state = state
+    init(type: ComponentType, identifier: String, componentDescription: String, answer: String, reference: String) {
         self.type = type
         self.id = identifier
         self.componentDescription = componentDescription
