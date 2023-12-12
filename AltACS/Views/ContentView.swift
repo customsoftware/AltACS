@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 
-
+// This is the top level view
 struct ContentView: View {
     @Query (sort: \TestSection.sequence) var sections: [TestSection]
     @Environment(\.modelContext) var modelContext
