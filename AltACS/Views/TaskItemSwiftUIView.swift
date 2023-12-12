@@ -97,6 +97,7 @@ struct TaskItemSwiftUIView: View {
         .navigationSplitViewStyle(.balanced)
         .navigationBarTitleDisplayMode(.inline)
     }
+    
 }
 
 #Preview {

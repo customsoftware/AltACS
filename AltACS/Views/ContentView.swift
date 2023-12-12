@@ -25,11 +25,11 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("ACS Test")
-            .onAppear(perform: {
-                if sections.count == 0 {
-                    addSection()
-                }
-            })
+//            .onAppear(perform: {
+//                if sections.count == 0 {
+//                    addSection()
+//                }
+//            })
         }
     }
     

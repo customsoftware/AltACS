@@ -57,11 +57,11 @@ class TaskFactory {
         case .notSet:
             fatalError("Can't have this")
         case .knowledge:
-            aTask.knowledge.append(newComponent)
+            aTask.knowledge?.append(newComponent)
         case .skill:
-            aTask.skills.append(newComponent)
+            aTask.skills?.append(newComponent)
         case .risk:
-            aTask.risk.append(newComponent)
+            aTask.risk?.append(newComponent)
         }
         
         context.insert(newComponent)

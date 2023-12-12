@@ -15,9 +15,9 @@ class Task {
     var reference: String = ""
     var objective: String = ""
     @Relationship var owningSection: TestSection?
-    @Relationship(deleteRule: .cascade) var knowledge = [TestComponent]()
-    @Relationship(deleteRule: .cascade) var risk = [TestComponent]()
-    @Relationship(deleteRule: .cascade) var skills = [TestComponent]()
+    @Relationship(deleteRule: .cascade, inverse: \TestComponent.owningTask) var knowledge : [TestComponent]?
+    @Relationship(deleteRule: .cascade, inverse: \TestComponent.owningTask) var risk : [TestComponent]?
+    @Relationship(deleteRule: .cascade, inverse: \TestComponent.owningTask) var skills : [TestComponent]?
     
     
     init(sequence: Int, name: String = "", reference: String, objective: String = "") {

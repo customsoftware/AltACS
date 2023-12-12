@@ -20,7 +20,7 @@ struct SectionsSwiftUIView: View {
     
     var body: some View {
         List {
-            ForEach(owningSection.tasks.sorted(by: { t1, t2 in
+            ForEach(owningSection.tasks!.sorted(by: { t1, t2 in
                 t1.sequence < t2.sequence
             })) { task in
                 NavigationLink(task.name) {
@@ -32,8 +32,8 @@ struct SectionsSwiftUIView: View {
             print("we're going away")
         })
         .onAppear(perform: {
-            guard owningSection.tasks.count == 0 else { return }
-            owningSection.tasks = TaskFactory.generateTasks(for: owningSection, in: modelContext)
+//            guard owningSection.tasks?.count == 0 else { return }
+//            owningSection.tasks = TaskFactory.generateTasks(for: owningSection, in: modelContext)
         })
     }
 }

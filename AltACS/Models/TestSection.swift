@@ -13,7 +13,7 @@ import SwiftData
 class TestSection {
     var section: String = ""
     var sequence: Int = 0
-    @Relationship var tasks = [Task]()
+    @Relationship (inverse: \Task.owningSection ) var tasks : [Task]?
     
     init(section: String, sequence: Int, tasks: [Task] = [Task]()) {
         self.section = section
