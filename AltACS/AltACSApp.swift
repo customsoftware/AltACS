@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct AltACSApp: App {
@@ -13,5 +14,6 @@ struct AltACSApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: TestSection.self)
     }
 }

@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		90747B522B27611600C4140D /* AltACSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B512B27611600C4140D /* AltACSApp.swift */; };
-		90747B542B27611600C4140D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B532B27611600C4140D /* ContentView.swift */; };
 		90747B562B27611700C4140D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90747B552B27611700C4140D /* Assets.xcassets */; };
 		90747B592B27611700C4140D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90747B582B27611700C4140D /* Preview Assets.xcassets */; };
 		90747B632B27611700C4140D /* AltACSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B622B27611700C4140D /* AltACSTests.swift */; };
 		90747B6D2B27611700C4140D /* AltACSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B6C2B27611700C4140D /* AltACSUITests.swift */; };
 		90747B6F2B27611700C4140D /* AltACSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B6E2B27611700C4140D /* AltACSUITestsLaunchTests.swift */; };
+		90747B7F2B27615800C4140D /* TestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B7C2B27615800C4140D /* TestComponent.swift */; };
+		90747B802B27615800C4140D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B7D2B27615800C4140D /* Task.swift */; };
+		90747B812B27615800C4140D /* TestSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B7E2B27615800C4140D /* TestSection.swift */; };
+		90747B882B27620C00C4140D /* TestItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B832B27620B00C4140D /* TestItemSwiftUIView.swift */; };
+		90747B892B27620C00C4140D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B842B27620C00C4140D /* ContentView.swift */; };
+		90747B8A2B27620C00C4140D /* SectionsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B852B27620C00C4140D /* SectionsSwiftUIView.swift */; };
+		90747B8B2B27620C00C4140D /* TaskItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B862B27620C00C4140D /* TaskItemSwiftUIView.swift */; };
+		90747B8C2B27620C00C4140D /* TaskItemListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B872B27620C00C4140D /* TaskItemListSwiftUIView.swift */; };
+		90747B8F2B279BD900C4140D /* TaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B8E2B279BD900C4140D /* TaskFactory.swift */; };
+		90747B912B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B902B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift */; };
+		90747B932B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B922B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift */; };
+		90747B952B27B82600C4140D /* TaskFactory+GoAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */; };
+		90747B972B27C18900C4140D /* TaskFactory+Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B962B27C18900C4140D /* TaskFactory+Airport.swift */; };
+		90747B992B27C2E800C4140D /* TaskFactory+Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +49,6 @@
 /* Begin PBXFileReference section */
 		90747B4E2B27611600C4140D /* AltACS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltACS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90747B512B27611600C4140D /* AltACSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltACSApp.swift; sourceTree = "<group>"; };
-		90747B532B27611600C4140D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90747B552B27611700C4140D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90747B582B27611700C4140D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90747B5E2B27611700C4140D /* AltACSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AltACSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,20 @@
 		90747B682B27611700C4140D /* AltACSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AltACSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90747B6C2B27611700C4140D /* AltACSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltACSUITests.swift; sourceTree = "<group>"; };
 		90747B6E2B27611700C4140D /* AltACSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltACSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		90747B7C2B27615800C4140D /* TestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestComponent.swift; sourceTree = "<group>"; };
+		90747B7D2B27615800C4140D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		90747B7E2B27615800C4140D /* TestSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSection.swift; sourceTree = "<group>"; };
+		90747B832B27620B00C4140D /* TestItemSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestItemSwiftUIView.swift; sourceTree = "<group>"; };
+		90747B842B27620C00C4140D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		90747B852B27620C00C4140D /* SectionsSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsSwiftUIView.swift; sourceTree = "<group>"; };
+		90747B862B27620C00C4140D /* TaskItemSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemSwiftUIView.swift; sourceTree = "<group>"; };
+		90747B872B27620C00C4140D /* TaskItemListSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemListSwiftUIView.swift; sourceTree = "<group>"; };
+		90747B8E2B279BD900C4140D /* TaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFactory.swift; sourceTree = "<group>"; };
+		90747B902B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+PreFlightPrep.swift"; sourceTree = "<group>"; };
+		90747B922B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+PreFlightProcedures.swift"; sourceTree = "<group>"; };
+		90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+GoAround.swift"; sourceTree = "<group>"; };
+		90747B962B27C18900C4140D /* TaskFactory+Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Airport.swift"; sourceTree = "<group>"; };
+		90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Performance.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +120,10 @@
 		90747B502B27611600C4140D /* AltACS */ = {
 			isa = PBXGroup;
 			children = (
+				90747B8D2B279BBC00C4140D /* Components */,
+				90747B7B2B27613E00C4140D /* Models */,
 				90747B512B27611600C4140D /* AltACSApp.swift */,
-				90747B532B27611600C4140D /* ContentView.swift */,
+				90747B822B2761EF00C4140D /* Views */,
 				90747B552B27611700C4140D /* Assets.xcassets */,
 				90747B572B27611700C4140D /* Preview Content */,
 			);
@@ -125,6 +153,41 @@
 				90747B6E2B27611700C4140D /* AltACSUITestsLaunchTests.swift */,
 			);
 			path = AltACSUITests;
+			sourceTree = "<group>";
+		};
+		90747B7B2B27613E00C4140D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90747B7E2B27615800C4140D /* TestSection.swift */,
+				90747B7D2B27615800C4140D /* Task.swift */,
+				90747B7C2B27615800C4140D /* TestComponent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		90747B822B2761EF00C4140D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90747B842B27620C00C4140D /* ContentView.swift */,
+				90747B852B27620C00C4140D /* SectionsSwiftUIView.swift */,
+				90747B862B27620C00C4140D /* TaskItemSwiftUIView.swift */,
+				90747B872B27620C00C4140D /* TaskItemListSwiftUIView.swift */,
+				90747B832B27620B00C4140D /* TestItemSwiftUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90747B8D2B279BBC00C4140D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				90747B8E2B279BD900C4140D /* TaskFactory.swift */,
+				90747B902B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift */,
+				90747B922B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift */,
+				90747B962B27C18900C4140D /* TaskFactory+Airport.swift */,
+				90747B942B27B82600C4140D /* TaskFactory+GoAround.swift */,
+				90747B982B27C2E800C4140D /* TaskFactory+Performance.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +320,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90747B542B27611600C4140D /* ContentView.swift in Sources */,
+				90747B952B27B82600C4140D /* TaskFactory+GoAround.swift in Sources */,
+				90747B992B27C2E800C4140D /* TaskFactory+Performance.swift in Sources */,
+				90747B802B27615800C4140D /* Task.swift in Sources */,
+				90747B882B27620C00C4140D /* TestItemSwiftUIView.swift in Sources */,
+				90747B912B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift in Sources */,
+				90747B892B27620C00C4140D /* ContentView.swift in Sources */,
+				90747B7F2B27615800C4140D /* TestComponent.swift in Sources */,
+				90747B8C2B27620C00C4140D /* TaskItemListSwiftUIView.swift in Sources */,
+				90747B972B27C18900C4140D /* TaskFactory+Airport.swift in Sources */,
+				90747B8B2B27620C00C4140D /* TaskItemSwiftUIView.swift in Sources */,
+				90747B8A2B27620C00C4140D /* SectionsSwiftUIView.swift in Sources */,
+				90747B8F2B279BD900C4140D /* TaskFactory.swift in Sources */,
 				90747B522B27611600C4140D /* AltACSApp.swift in Sources */,
+				90747B812B27615800C4140D /* TestSection.swift in Sources */,
+				90747B932B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
