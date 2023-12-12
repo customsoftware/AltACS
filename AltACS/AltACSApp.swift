@@ -14,6 +14,10 @@ struct AltACSApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: TestSection.self)
+        .modelContainer(for: [
+            TestSection.self,
+            Task.self,
+            TestComponent.self
+        ])
     }
 }
