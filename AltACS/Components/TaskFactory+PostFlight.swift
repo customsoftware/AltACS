@@ -14,24 +14,23 @@ import SwiftData
 extension TaskFactory {
     static func generatePostFlight(for aSection: TestSection, in context: ModelContext) -> [Task] {
         var retValue = [Task]()
-        let p1 = Task(sequence: 9, name: "Normal Takeoff and Climb", reference: "FAA-H-8083-2", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with a normal takeoff, climb operations, and rejected takeoff procedures.")
+        let task1 = TaskFactory.createTask(using: 0, name: "After Landing, Parking and Securing", reference: "FAA-H-8083-2, FAA-H-8083-3; POH/AFM", objective: "TTo determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with after landing, parking, and securing procedures.", in: context, and: aSection)
         
-        p1.owningSection = aSection
-        context.insert(p1)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.XII.A.K1", "Airplane shutdown, securing, and postflight inspection.", in: task1, using: context)
+        TaskFactory.createComponent(type: .knowledge, id: "PA.XII.A.K2", "Documenting in-flight/postflight discrepancies.", in: task1, using: context)
         
-        retValue.append(p1)
+        TaskFactory.createComponent(type: .risk, id: "PA.XII.A.R1", "Inappropriate activities and distractions.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.XII.A.R2", "Confirmation or expectation bias as related to taxi instructions.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.XII.A.R3", "Airport specific security procedures.", in: task1, using: context)
+        TaskFactory.createComponent(type: .risk, id: "PA.XII.A.R4", "Disembarking passengers.", in: task1, using: context)
+        
+        TaskFactory.createComponent(type: .skill, id: "PA.XII.A.S1", "Utilize runway incursion avoidance procedures.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.XII.A.S2", "Park in an appropriate area, considering the safety of nearby persons and property.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.XII.A.S3", "Complete the appropriate checklist.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.XII.A.S4", "Conduct a postflight inspection and document discrepancies and servicing requirements, if any.", in: task1, using: context)
+        TaskFactory.createComponent(type: .skill, id: "PA.XII.A.S5", "Secure the airplane.", in: task1, using: context)
+        
+        retValue.append(task1)
         return retValue
     }
 }
-
-
-/**
- // --
- let task1 = TaskFactory.createTask(using: 0, name: "Preflight Assessment", reference: "FAA-H-8083-2, FAA-H-8083-3, FAA-H-8083-23; POH/AFM; AC 00-6", objective: "To determine that the applicant exhibits satisfactory knowledge, risk management, and skills associated with preparing for safe flight.", in: context, and: aSection)
- 
- TaskFactory.createComponent(type: .knowledge, id: "PA.II.A.K1", "Pilot self-assessment.", in: task1, using: context)
- TaskFactory.createComponent(type: .risk, id: "PA.II.A.R1", "The applicant demonstrates the ability to identify, assess and mitigate risks, encompassing: Pilot.", in: task1, using: context)
- TaskFactory.createComponent(type: .skill, id: "PA.II.A.S1", "Inspect the airplane with reference to an appropriate checklist.", in: task1, using: context)
- 
- retValue.append(task1)
- */

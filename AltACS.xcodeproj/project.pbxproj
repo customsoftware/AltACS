@@ -33,6 +33,7 @@
 		90747BA12B27E8C000C4140D /* TaskFactory+Emergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA02B27E8C000C4140D /* TaskFactory+Emergency.swift */; };
 		90747BA32B27E8D200C4140D /* TaskFactory+Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA22B27E8D200C4140D /* TaskFactory+Night.swift */; };
 		90747BA52B27E8E400C4140D /* TaskFactory+PostFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747BA42B27E8E400C4140D /* TaskFactory+PostFlight.swift */; };
+		908889792B28B42E0045318B /* SkillTestItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908889782B28B42E0045318B /* SkillTestItemSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		90747BA02B27E8C000C4140D /* TaskFactory+Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Emergency.swift"; sourceTree = "<group>"; };
 		90747BA22B27E8D200C4140D /* TaskFactory+Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+Night.swift"; sourceTree = "<group>"; };
 		90747BA42B27E8E400C4140D /* TaskFactory+PostFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskFactory+PostFlight.swift"; sourceTree = "<group>"; };
+		908889782B28B42E0045318B /* SkillTestItemSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTestItemSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				90747B862B27620C00C4140D /* TaskItemSwiftUIView.swift */,
 				90747B872B27620C00C4140D /* TaskItemListSwiftUIView.swift */,
 				90747B832B27620B00C4140D /* TestItemSwiftUIView.swift */,
+				908889782B28B42E0045318B /* SkillTestItemSwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				90747B8F2B279BD900C4140D /* TaskFactory.swift in Sources */,
 				90747B522B27611600C4140D /* AltACSApp.swift in Sources */,
 				90747B9B2B27E86900C4140D /* TaskFactory+Navigation.swift in Sources */,
+				908889792B28B42E0045318B /* SkillTestItemSwiftUIView.swift in Sources */,
 				90747B812B27615800C4140D /* TestSection.swift in Sources */,
 				90747B932B27B7E300C4140D /* TaskFactory+PreFlightProcedures.swift in Sources */,
 			);

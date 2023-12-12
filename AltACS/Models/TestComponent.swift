@@ -13,6 +13,7 @@ import SwiftData
 class TestComponent {
     var state: ComponentState = ComponentState.notTested
     var type: ComponentType = ComponentType.notSet
+    var isComplete: Bool = false
     var id: String = ""
     var componentDescription: String = ""
     var answer: String = ""
@@ -31,10 +32,10 @@ class TestComponent {
 }
 
 
-enum ComponentState: Codable {
-    case notTested
-    case passed
-    case failed
+enum ComponentState: Int, Codable {
+    case notTested = 0
+    case passed = 1
+    case failed = 2
 }
 
 

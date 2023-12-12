@@ -70,7 +70,7 @@ struct TaskItemSwiftUIView: View {
                         t1.id < t2.id
                     })) { aSkill in
                         NavigationLink {
-                            TestItemSwiftUIView(aSkill: aSkill)
+                            SkillTestItemSwiftUIView(aSkill: aSkill)
                         } label: {
                             TaskItemListSwiftUIView(aSkill: aSkill)
                         }
@@ -79,12 +79,11 @@ struct TaskItemSwiftUIView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
-        
-        .toolbar(content: {
-            Button("Add Item") {
-                showingNewActionSheet = true
-            }
-        })
+//        .toolbar(content: {
+//            Button("Add Item") {
+//                showingNewActionSheet = true
+//            }
+//        })
         .popover(isPresented: self.$isShowingKnowledgePopover, arrowEdge: .top) {
             Text("New Knowledge Item")
                 .bold()

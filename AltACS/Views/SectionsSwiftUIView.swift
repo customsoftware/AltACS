@@ -28,25 +28,25 @@ struct SectionsSwiftUIView: View {
                 }
             }
         }
-        .toolbar {
-            Button("Add Task") {
-                self.isShowingPopover = true
-            }
-            .popover(isPresented: self.$isShowingPopover, arrowEdge: .top) {
-                TextField("Task Name", text: $taskName)
-                    .padding()
-                TextField("Resource", text: $taskResource)
-                    .padding()
-                TextField("Objective", text: $taskObjective, axis: .vertical)
-                    .multilineTextAlignment(.leading)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                Divider()
-                Button("Save", action: saveData)
-                    .padding()
-                Button("Cancel", action: cancelPopover)
-            }
-        }
+//        .toolbar {
+//            Button("Add Task") {
+//                self.isShowingPopover = true
+//            }
+//            .popover(isPresented: self.$isShowingPopover, arrowEdge: .top) {
+//                TextField("Task Name", text: $taskName)
+//                    .padding()
+//                TextField("Resource", text: $taskResource)
+//                    .padding()
+//                TextField("Objective", text: $taskObjective, axis: .vertical)
+//                    .multilineTextAlignment(.leading)
+//                    .textFieldStyle(.roundedBorder)
+//                    .padding()
+//                Divider()
+//                Button("Save", action: saveData)
+//                    .padding()
+//                Button("Cancel", action: cancelPopover)
+//            }
+//        }
         .onAppear(perform: {
             guard owningSection.tasks.count == 0 else { return }
             owningSection.tasks = TaskFactory.generateTasks(for: owningSection, in: modelContext)
