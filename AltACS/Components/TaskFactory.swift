@@ -50,21 +50,21 @@ class TaskFactory {
     }
     
     static func createComponent(type: ComponentType, id: String, _ text: String, in aTask: Task, using context: ModelContext){
-        let newComponent = TestComponent( type: type, identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
-        newComponent.owningTask = aTask
+        let aNewComponent = TestComponent( type: type, identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
+        aNewComponent.owningTask = aTask
         
         switch type {
         case .notSet:
             fatalError("Can't have this")
         case .knowledge:
-            aTask.knowledge?.append(newComponent)
+            aTask.knowledge?.append(aNewComponent)
         case .skill:
-            aTask.skills?.append(newComponent)
+            aTask.skills?.append(aNewComponent)
         case .risk:
-            aTask.risk?.append(newComponent)
+            aTask.risk?.append(aNewComponent)
         }
         
-        context.insert(newComponent)
+        context.insert(aNewComponent)
     }
     
 }

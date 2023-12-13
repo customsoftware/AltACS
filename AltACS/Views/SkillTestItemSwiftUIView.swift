@@ -28,6 +28,13 @@ struct SkillTestItemSwiftUIView: View {
             })
             .bold()
             .padding(.trailing)
+            Text("Comments:")
+                .bold()
+            TextField("Comment on skill", text: $aSkill.answer, axis: .vertical)
+                .multilineTextAlignment(.leading)
+                .padding(.leading)
+                .padding(.trailing)
+            
             Spacer()
         }
         .padding(.leading)

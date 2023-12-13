@@ -18,6 +18,6 @@ struct AltACSApp: App {
             TestSection.self,
             Task.self,
             TestComponent.self
-        ])
+        ], isAutosaveEnabled: true)
     }
 }

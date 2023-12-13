@@ -42,7 +42,9 @@ struct TaskItemSwiftUIView: View {
                 }
                 List () {
                     Section ("Knowledge") {
-                        ForEach(owningTask.knowledge.sorted(by: { t1, t2 in
+                        ForEach(owningTask.knowledge!.filter({ aTestComponent in
+                            aTestComponent.type == .knowledge
+                        }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         }) ) { aKnowledge in
                             NavigationLink {
@@ -54,7 +56,9 @@ struct TaskItemSwiftUIView: View {
                     }
                     
                     Section ("Risk Management") {
-                        ForEach(owningTask.risk.sorted(by: { t1, t2 in
+                        ForEach(owningTask.risk!.filter({ aTestComponent in
+                            aTestComponent.type == .risk
+                        }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         })) { aRisk in
                             NavigationLink {
@@ -66,7 +70,9 @@ struct TaskItemSwiftUIView: View {
                     }
                     
                     Section ("Skill") {
-                        ForEach(owningTask.skills.sorted(by: { t1, t2 in
+                        ForEach(owningTask.skills!.filter({ aTestComponent in
+                            aTestComponent.type == .skill
+                        }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         })) { aSkill in
                             NavigationLink {
