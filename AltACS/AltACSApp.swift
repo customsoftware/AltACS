@@ -12,7 +12,7 @@ import SwiftData
 struct AltACSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeSwiftUIView()
         }
         .modelContainer(for: [
             TestSection.self,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900895C32B29F6A600FB0508 /* WrittenExaminerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900895C22B29F6A600FB0508 /* WrittenExaminerSwiftUIView.swift */; };
+		900895C52B29FCDE00FB0508 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900895C42B29FCDE00FB0508 /* HomeSwiftUIView.swift */; };
 		90747B522B27611600C4140D /* AltACSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90747B512B27611600C4140D /* AltACSApp.swift */; };
 		90747B562B27611700C4140D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90747B552B27611700C4140D /* Assets.xcassets */; };
 		90747B592B27611700C4140D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90747B582B27611700C4140D /* Preview Assets.xcassets */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		900895C22B29F6A600FB0508 /* WrittenExaminerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenExaminerSwiftUIView.swift; sourceTree = "<group>"; };
+		900895C42B29FCDE00FB0508 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
 		90747B4E2B27611600C4140D /* AltACS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltACS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90747B512B27611600C4140D /* AltACSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltACSApp.swift; sourceTree = "<group>"; };
 		90747B552B27611700C4140D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				90747B872B27620C00C4140D /* TaskItemListSwiftUIView.swift */,
 				90747B832B27620B00C4140D /* TestItemSwiftUIView.swift */,
 				908889782B28B42E0045318B /* SkillTestItemSwiftUIView.swift */,
+				900895C22B29F6A600FB0508 /* WrittenExaminerSwiftUIView.swift */,
+				900895C42B29FCDE00FB0508 /* HomeSwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				90747B882B27620C00C4140D /* TestItemSwiftUIView.swift in Sources */,
 				90747B912B279C4F00C4140D /* TaskFactory+PreFlightPrep.swift in Sources */,
 				90747B892B27620C00C4140D /* ContentView.swift in Sources */,
+				900895C52B29FCDE00FB0508 /* HomeSwiftUIView.swift in Sources */,
 				90747BA12B27E8C000C4140D /* TaskFactory+Emergency.swift in Sources */,
 				90747B7F2B27615800C4140D /* TestComponent.swift in Sources */,
 				90747B8C2B27620C00C4140D /* TaskItemListSwiftUIView.swift in Sources */,
@@ -359,6 +366,7 @@
 				90747B972B27C18900C4140D /* TaskFactory+Airport.swift in Sources */,
 				90747B9F2B27E8AA00C4140D /* TaskFactory+Instruments.swift in Sources */,
 				90747B8B2B27620C00C4140D /* TaskItemSwiftUIView.swift in Sources */,
+				900895C32B29F6A600FB0508 /* WrittenExaminerSwiftUIView.swift in Sources */,
 				90747B8A2B27620C00C4140D /* SectionsSwiftUIView.swift in Sources */,
 				90747BA52B27E8E400C4140D /* TaskFactory+PostFlight.swift in Sources */,
 				90747B8F2B279BD900C4140D /* TaskFactory.swift in Sources */,
