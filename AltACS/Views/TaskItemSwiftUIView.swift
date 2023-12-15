@@ -43,7 +43,7 @@ struct TaskItemSwiftUIView: View {
                 List () {
                     Section ("Knowledge") {
                         ForEach(owningTask.knowledge!.filter({ aTestComponent in
-                            aTestComponent.type == .knowledge
+                            aTestComponent.typeEquivalent() == ComponentType.knowledge
                         }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         }) ) { aKnowledge in
@@ -57,7 +57,7 @@ struct TaskItemSwiftUIView: View {
                     
                     Section ("Risk Management") {
                         ForEach(owningTask.risk!.filter({ aTestComponent in
-                            aTestComponent.type == .risk
+                            aTestComponent.typeEquivalent() == ComponentType.risk
                         }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         })) { aRisk in
@@ -71,7 +71,7 @@ struct TaskItemSwiftUIView: View {
                     
                     Section ("Skill") {
                         ForEach(owningTask.skills!.filter({ aTestComponent in
-                            aTestComponent.type == .skill
+                            aTestComponent.typeEquivalent() == ComponentType.skill
                         }).sorted(by: { t1, t2 in
                             t1.id < t2.id
                         })) { aSkill in
@@ -90,7 +90,7 @@ struct TaskItemSwiftUIView: View {
         } detail: {
             if let item = selectedItem {
                 NavigationLink(value: selectedItem) {
-                    if selectedItem?.type == .skill {
+                    if selectedItem?.typeEquivalent() == .skill {
                         SkillTestItemSwiftUIView(aSkill: item)
                     } else {
                         TestItemSwiftUIView(aSkill: item)

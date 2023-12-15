@@ -11,7 +11,7 @@ import SwiftData
 
 @Model
 class TestComponent {
-    var type: ComponentType = ComponentType.notSet
+    private(set) var type: Int = 0
     var isComplete: Bool = false
     var id: String = ""
     var componentDescription: String = ""
@@ -20,12 +20,54 @@ class TestComponent {
     
     @Relationship var owningTask: Task?
     
-    init(type: ComponentType, identifier: String, componentDescription: String, answer: String, reference: String) {
-        self.type = type
+    init(identifier: String, componentDescription: String, answer: String, reference: String) {
         self.id = identifier
         self.componentDescription = componentDescription
         self.answer = answer
         self.reference = reference
+    }
+    
+    func setType(_ type: ComponentType) {
+        switch type {
+        case .notSet:
+            self.type = 0
+        case .knowledge:
+            self.type = 1
+        case .skill:
+            self.type = 2
+        case .risk:
+            self.type = 3
+        }
+    }
+    
+    func typeEquivalent() -> ComponentType {
+        var retValue = ComponentType.notSet
+        switch type {
+        case 0:
+            retValue = .notSet
+        case 1:
+            retValue = .knowledge
+        case 2:
+            retValue = .risk
+        case 3:
+            retValue = .skill
+        default:
+            retValue = .notSet
+        }
+        
+        guard retValue == .notSet else { return retValue }
+        if id.contains("K") {
+            type = 1
+            retValue = .knowledge
+        } else if id.contains("R") {
+            type = 2
+            retValue = .risk
+        } else if id.contains("S") {
+            type = 3
+            retValue = .skill
+        }
+        
+        return retValue
     }
 }
 

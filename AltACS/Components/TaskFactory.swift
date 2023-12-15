@@ -50,8 +50,10 @@ class TaskFactory {
     }
     
     static func createComponent(type: ComponentType, id: String, _ text: String, in aTask: Task, using context: ModelContext){
-        let aNewComponent = TestComponent( type: type, identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
+        let aNewComponent = TestComponent(identifier: id, componentDescription: text, answer: "Write answer here", reference: "Write references here")
         aNewComponent.owningTask = aTask
+        
+        aNewComponent.setType(type)
         
         switch type {
         case .notSet:
