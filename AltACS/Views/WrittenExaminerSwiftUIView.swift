@@ -47,6 +47,11 @@ struct WrittenExaminerSwiftUIView: View {
                     }
                 }
             }
+            .onAppear(perform: {
+                components.forEach { aComponent in
+                    aComponent.fixType()
+                }
+            })
             .toolbar(content: {
                 Button {
                     isShowingSheet = true

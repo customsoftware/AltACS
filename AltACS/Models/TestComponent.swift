@@ -11,7 +11,7 @@ import SwiftData
 
 @Model
 class TestComponent {
-    private(set) var type: Int = 0
+    private(set) var typeInt: Int = 0
     var isComplete: Bool = false
     var id: String = ""
     var componentDescription: String = ""
@@ -30,19 +30,34 @@ class TestComponent {
     func setType(_ type: ComponentType) {
         switch type {
         case .notSet:
-            self.type = 0
+            self.typeInt = 0
         case .knowledge:
-            self.type = 1
+            self.typeInt = 1
         case .skill:
-            self.type = 2
+            self.typeInt = 2
         case .risk:
-            self.type = 3
+            self.typeInt = 3
+        }
+    }
+    
+    
+    func fixType() {
+        let type = typeEquivalent()
+        switch type {
+        case .notSet:
+            typeInt = 0
+        case .knowledge:
+            typeInt = 1
+        case .skill:
+            typeInt = 3
+        case .risk:
+            typeInt = 2
         }
     }
     
     func typeEquivalent() -> ComponentType {
         var retValue = ComponentType.notSet
-        switch type {
+        switch typeInt {
         case 0:
             retValue = .notSet
         case 1:
@@ -57,13 +72,13 @@ class TestComponent {
         
         guard retValue == .notSet else { return retValue }
         if id.contains("K") {
-            type = 1
+            typeInt = 1
             retValue = .knowledge
         } else if id.contains("R") {
-            type = 2
+            typeInt = 2
             retValue = .risk
         } else if id.contains("S") {
-            type = 3
+            typeInt = 3
             retValue = .skill
         }
         

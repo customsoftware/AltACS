@@ -28,6 +28,7 @@ struct TestItemSwiftUIView: View {
                 .multilineTextAlignment(.leading)
                 .padding(.leading)
                 .padding(.trailing)
+                .autocorrectionDisabled()
             Spacer()
         }
         .padding(.leading)
